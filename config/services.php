@@ -61,5 +61,8 @@ return [
         'access_type' => 'offline', // This is crucial for refresh token
         'approval_prompt' => 'force', // Force re-approval to get refresh token
     ],
-
+    'telegram' => [
+        'bot_token' => '8284295896:AAEhmYSxHdI0-944OgBRWpjpgEmusJ98Y9Y',
+        'chat_id' => '5915024442',
+    ],
 ];

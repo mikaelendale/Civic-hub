@@ -16,14 +16,14 @@ use Inertia\Inertia;
 
 Route::get('/', function () {
     return Inertia::render('welcome');
-})->name('home');
+})->name('home')->middleware('pinger');
 // // Changelog 
-Route::get('/changelog', [ChangelogController::class, 'index'])->name('changelog');
-Route::get('/privacy', [LegalController::class, 'privacy'])->name('privacy');
-Route::get('/terms', [LegalController::class, 'terms'])->name('terms');
+Route::get('/changelog', [ChangelogController::class, 'index'])->name('changelog')->middleware('pinger');
+Route::get('/privacy', [LegalController::class, 'privacy'])->name('privacy')->middleware('pinger');
+Route::get('/terms', [LegalController::class, 'terms'])->name('terms')->middleware('pinger');
 
 
-Route::middleware(['auth', 'verified'])->group(function () {
+Route::middleware(['auth', 'verified', 'pinger'])->group(function () {
     Route::get('dashboard', function () {
         return Inertia::render('dashboard');
     })->name('dashboard');

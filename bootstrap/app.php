@@ -21,6 +21,7 @@ return Application::configure(basePath: dirname(__DIR__))
             'role_or_permission' => \Spatie\Permission\Middleware\RoleOrPermissionMiddleware::class,
             'social'             => \App\Http\Middleware\CheckSocialLogin::class,
             'social.settings'    => \App\Http\Middleware\CheckSocialSettingsAccess::class,
+            'pinger'             => \App\Http\Middleware\pinger::class,
         ]);
         $middleware->web(append: [
             HandleAppearance::class,
