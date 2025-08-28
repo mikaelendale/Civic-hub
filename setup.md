@@ -3,7 +3,7 @@
 1. Install composer
 
 ```bash
-composer install
+composer install && npm install && npm run dev
 ```
 
 2. generate application key
@@ -42,3 +42,9 @@ then run
 $user = \App\Models\User::find(1);
 $user->assignRole('admin');
 ```
+
+7. serve the app
+
+```bash
+php artisan serve
+``` 
