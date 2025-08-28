@@ -40,7 +40,7 @@ if (config('features.rbac')) {
     Route::middleware(['auth', 'verified', 'role:admin'])->group(function () {
         Route::get('/admin', function () {
             return redirect()->route('admin.dashboard');
-        })->name('admin.dashboard');
+        })->name('admin.index');
         Route::get('admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
         Route::get('admin/users', [AdminDashboardController::class, 'users'])->name('admin.users.index');
         Route::get('admin/users/{user}', [AdminDashboardController::class, 'showUser'])->name('admin.users.show');
